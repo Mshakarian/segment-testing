@@ -65,7 +65,7 @@
       function sendSegmentIdentify(event) {
         console.log(event);
         event.preventDefault();
-        analytics.identify("user1234", {
+        analytics.identify({
           email: document.getElementById("email").value,
           firstName: "Fourth",
           lastName: "Test",
@@ -81,7 +81,7 @@
         });
         console.log("identify");
         analytics.track("purchase", {
-          orderId: "order-123",
+          orderId: (Math.random()*100),
           revenue: 123,
           commissionApproved: true,
           eventData1: "event 1",
