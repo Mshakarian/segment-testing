@@ -74,11 +74,8 @@
         const email = formData.get('email');
         const short_code = formData.get('short_code');
         const campaign_uid = formData.get("campaign_uid");
-        console.log(
-          "email: " + email,
-          "short code: " + short_code,
-          "campaign uid: " + campaign_uid
-        );
+        mbsy.identify(email);
+        mbsy.track({campaign: campaign_uid, revenue: 0, is_trial: true, commissionApproved: true })
       }
     </script>
   </body>
