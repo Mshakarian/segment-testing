@@ -59,10 +59,10 @@
   <body>
     <center>
       <h3>Sign Up to Test This Integration!</h3>
-      <form id="formId" onsubmit="sendCommission(event)">
-        <input id="email" type="email" />
-        <input id="short_code" type="hidden" value="" />
-        <input id="campaign_uid" type="hidden" value="" />
+      <form id="formId" onsubmit="sendCommission(event)" name="formId" >
+        <input id="email" type="email" name="email" />
+        <input id="short_code" type="hidden" value="" name="short_code" />
+        <input id="campaign_uid" type="hidden" value="" name="campaign_uid" />
         <input type="submit" />
       </form>
     </center>
@@ -71,8 +71,8 @@
         event.preventDefault();
         const form = document.getElementById("formId");
         const formData = new FormData(form);
-        const email = formData.get("email");
-        const short_code = formData.get("short_code");
+        const email = formData.get('email');
+        const short_code = formData.get('short_code');
         const campaign_uid = formData.get("campaign_uid");
         console.log(
           "email: " + email,
