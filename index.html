@@ -57,7 +57,9 @@
       function sendCommission(event){
          event.preventDefault();
          const formData = new FormData(document.getElementById('formId'));
-         const {email, short_code, campaign_uid} = formData
+         const email = formData.get('email');
+         const short_code = formData.get('short_code');
+         const campaign_uid = formData.get('campaign_uid');
          console.log("email: " + email, "short code: " + short_code, "campaign uid: " + campaign_uid);        
       }
     </script>
