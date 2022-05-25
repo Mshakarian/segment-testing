@@ -56,9 +56,8 @@
       mbsyUpdateForm();
       function sendCommission(event){
          event.preventDefault();
-         const {email, short_code, campaign_uid} = new FormData(document.querySelector('form'))
-
-        console.log("formData: " + formData)
+         const {email, short_code, campaign_uid} = new FormData(document.querySelector('form'));
+         console.log("email: " + email, "short code: " + short_code, "campaign uid: " + campaign_uid);        
       }
     </script>
   </head>
