@@ -56,7 +56,8 @@
       mbsyUpdateForm();
       function sendCommission(event){
          event.preventDefault();
-         const formData = new FormData(document.querySelector('form'))
+         const {formData} = new FormData(document.querySelector('form'))
+
         console.log("formData: " + formData)
       }
     </script>
