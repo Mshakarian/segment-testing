@@ -56,7 +56,8 @@
       mbsyUpdateForm();
       function sendCommission(event){
          event.preventDefault();
-         const {email, short_code, campaign_uid} = new FormData(document.querySelector('form'));
+         const formData = new FormData(document.getElementById('formId'));
+         const {email, short_code, campaign_uid} = formData
          console.log("email: " + email, "short code: " + short_code, "campaign uid: " + campaign_uid);        
       }
     </script>
@@ -64,7 +65,7 @@
   <body>
     <center>
       <h3>Sign Up to Test This Integration!</h3>
-      <form onsubmit="sendCommission(event)">
+      <form id='formId' onsubmit="sendCommission(event)">
         <input id="email" type="email" />
         <input id="short_code" type="hidden" value="" />
         <input id="campaign_uid" type="hidden" value="" />
