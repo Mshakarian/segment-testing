@@ -59,7 +59,7 @@
   <body>
     <center>
       <h3>Sign Up to Test This Integration!</h3>
-      <form id="formId" onsubmit="sendCommission(event)" name="formId" >
+      <form id="formId" onsubmit="sendCommission(event)" name="formId">
         <input id="email" type="email" name="email" />
         <input id="short_code" type="hidden" value="" name="short_code" />
         <input id="campaign_uid" type="hidden" value="" name="campaign_uid" />
@@ -71,11 +71,15 @@
         event.preventDefault();
         const form = document.getElementById("formId");
         const formData = new FormData(form);
-        const email = formData.get('email');
-        const short_code = formData.get('short_code');
+        const email = formData.get("email");
+        const short_code = formData.get("short_code");
         const campaign_uid = formData.get("campaign_uid");
-        mbsy.identify({email: email, sandbox:true});
-        mbsy.track({campaign: campaign_uid, revenue: 0, commissionApproved: true })
+        mbsy.identify({ email: email, sandbox: true });
+        mbsy.track({
+          campaign: campaign_uid,
+          revenue: 0,
+          commissionApproved: true,
+        });
       }
     </script>
   </body>
