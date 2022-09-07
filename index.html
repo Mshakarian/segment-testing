@@ -67,6 +67,7 @@
       </form>
     </center>
     <script>
+      let conversion = false
       function sendCommission(event) {
         event.preventDefault();
         const form = document.getElementById("formId");
@@ -75,11 +76,7 @@
         const short_code = formData.get("short_code");
         const campaign_uid = formData.get("campaign_uid");
         mbsy.identify({ email: email, sandbox: true });
-        mbsy.track({
-          campaign: campaign_uid,
-          revenue: 0,
-          commissionApproved: true,
-        });
+        conversion = true;
       }
     </script>
   </body>
