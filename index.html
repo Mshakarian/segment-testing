@@ -67,15 +67,15 @@
       </form>
     </center>
     <script>
+      let email;
       function sendCommission(event) {
         event.preventDefault();
         const form = document.getElementById("formId");
         const formData = new FormData(form);
-        const email = formData.get("email");
+        email = formData.get("email");
         const short_code = formData.get("short_code");
         const campaign_uid = formData.get("campaign_uid");
         mbsy.identify({ email: email, sandbox: true });
-        const conversion = true;
       }
     </script>
   </body>
