@@ -75,7 +75,7 @@
         const email = formData.get("email");
         const short_code = formData.get("short_code");
         const campaign_uid = formData.get("campaign_uid");
-        mbsy.identify({ email: email, sandbox: true });
+        mbsy.identify({ email: email });
         conversion = true;
       }
     </script>
