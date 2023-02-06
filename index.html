@@ -69,7 +69,7 @@
     <div id="raf"></div>
     <script>
       mbsy.on('promptEnroll', function(event, properties) {
-      console.log("event: "+ event, "properties: "+properties)
+      console.log(properties.email, properties.firstName, properties.lastName)
       //const referrerData = JSON.parse(window.localStorage.getItem('mbsy/cookie')).value;
       //if (referrerData !== null){
       //  mbsy.identify({email:properties.email})
