@@ -68,7 +68,14 @@
     </center>
     <div id="raf"></div>
     <script>
-
+      mbsy.on('promptEnroll', function(event, properties) {
+      console.log("event: "+ event, "properties: "+properties)
+      //const referrerData = JSON.parse(window.localStorage.getItem('mbsy/cookie')).value;
+      //if (referrerData !== null){
+      //  mbsy.identify({email:properties.email})
+      //  mbsy.track({campaign:referrerData.mbsy_cookie_campaign})
+      //  }
+      }
     </script>
   </body>
 </html>
