@@ -71,7 +71,7 @@
     <script>
       function sendCommission(event) {
         event.preventDefault();
-        let form = getElementById("formId")
+        let form = document.getElementById("formId")
         let formData = new formData(form)
       const referrerData = JSON.parse(window.localStorage.getItem('mbsy/cookie')).value;
       if (referrerData !== null){
