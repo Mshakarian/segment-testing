@@ -71,8 +71,8 @@
     <script>
       function sendCommission(event) {
         event.preventDefault();
-        let form = document.getElementById("formId")
-        let formData = new formData(form)
+        let form = document.querySelector("#formId")
+        let formData = new FormData(form)
       const referrerData = JSON.parse(window.localStorage.getItem('mbsy/cookie')).value;
       if (referrerData !== null){
         mbsy.identify({ email:formData.email, enroll:true, emailNewAmbassador:false, deactivateNewAmbassador:true })
