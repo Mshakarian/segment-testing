@@ -76,7 +76,7 @@
         let formData = new FormData(form)
       const referrerData = JSON.parse(window.localStorage.getItem('mbsy/cookie')).value;
       if (referrerData !== null){
-        mbsy.identify({ email:formData.email }, { enroll:true, emailNewAmbassador:false, deactivateNewAmbassador:true })
+        mbsy.identify({ email:'shak+wbtest1@getambassador.com' }, { enroll:true, emailNewAmbassador:false, deactivateNewAmbassador:true })
         mbsy.track({ revenue:50 })
         }
       }
