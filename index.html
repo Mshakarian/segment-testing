@@ -41,7 +41,8 @@
     </script>
     <script>
       function mbsyUpdateForm() {
-        mbsy.getReferrerInfo(function (referrerData) {
+        const referrerData = JSON.parse(window.localStorage.getItem('mbsy/cookie')).value;
+        if (referrerData !== null){
           var mbsyInterval = setInterval(function () {
             var mbsyShortCodeField = document.getElementById("short_code");
             var mbsyCampaignUidField = document.getElementById("campaign_uid");
@@ -51,7 +52,7 @@
               clearInterval(mbsyInterval);
             }
           }, 100);
-        });
+        };
       }
       mbsyUpdateForm();
     </script>
@@ -68,11 +69,14 @@
     </center>
     <div id="raf"></div>
     <script>
-      mbsy.on('promptEnroll', function(event, properties) {
+      function sendCommission(event) {
+        event.preventDefault();
+        let form = getElementById("formId")
+        let formData = new formData(form)
       const referrerData = JSON.parse(window.localStorage.getItem('mbsy/cookie')).value;
       if (referrerData !== null){
-        mbsy.identify({email:properties.email})
-        mbsy.track({campaign:referrerData.mbsy_cookie_campaign})
+        mbsy.identify({ email:formData.email, enroll=true, emailNewAmbassador=false, deactivateNewAmbassador:true })
+        mbsy.track({ revenue:50 })
         }
       })
     </script>
