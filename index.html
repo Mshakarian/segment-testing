@@ -47,8 +47,8 @@
             var mbsyShortCodeField = document.getElementById("short_code");
             var mbsyCampaignUidField = document.getElementById("campaign_uid");
             if (mbsyShortCodeField && mbsyCampaignUidField) {
-              mbsyShortCodeField.value = referrerData.shortCode;
-              mbsyCampaignUidField.value = referrerData.campaign;
+              mbsyShortCodeField.value = referrerData.mbsy_cookie_code;
+              mbsyCampaignUidField.value = referrerData.mbsy_cookie_campaign;
               clearInterval(mbsyInterval);
             }
           }, 100);
@@ -76,7 +76,7 @@
         let formData = new FormData(form)
       const referrerData = JSON.parse(window.localStorage.getItem('mbsy/cookie')).value;
       if (referrerData !== null){
-        mbsy.identify({ email:'shak+wbtest1@getambassador.com' }, { enroll:true, emailNewAmbassador:false, deactivateNewAmbassador:true })
+        mbsy.identify({ email:'shak+wbtest3@getambassador.com' }, { segments:6, emailNewAmbassador:false })
         mbsy.track({ revenue:50 })
         }
       }
