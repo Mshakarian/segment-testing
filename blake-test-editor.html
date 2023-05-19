@@ -21,23 +21,26 @@
                 email_input.value="";
             }
         </script>
-        <form onsubmit={setVars} id="ambassador-form">
-            <label for="first_name">First Name</label>
-            <input  id="first_name" maxlength="40" name="first_name" size="20" type="text" />
-            <br/>
-            <label for="last_name">Last Name</label>
-            <input  id="last_name" maxlength="80" name="last_name" size="20" type="text" />
-            <br/>
-            <label for="email">Email</label>
-            <input  id="email" maxlength="80" name="email" size="20" type="text" />
-            <br/>
-        
-            <input type="submit" name="submit">
-        </form>
         <div id="header-section" name="header-section">
             <h1>
                 You Should Be able to Attach A RAF below!
             </h1>
+        </div>
+
+        <div id="form-section" name="form-section">
+            <form onsubmit={setVars} id="ambassador-form">
+                <label for="first_name">First Name</label>
+                <input  id="first_name" maxlength="40" name="first_name" size="20" type="text" />
+                <br/>
+                <label for="last_name">Last Name</label>
+                <input  id="last_name" maxlength="80" name="last_name" size="20" type="text" />
+                <br/>
+                <label for="email">Email</label>
+                <input  id="email" maxlength="80" name="email" size="20" type="text" />
+                <br/>
+            
+                <input type="submit" name="submit">
+            </form>
         </div>
         <div id="button-section" name="button-section">
             <input type="button" value="Reset Form" onclick={formReset}>
