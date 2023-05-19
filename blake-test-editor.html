@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <script>(function (u, n, i, v, e, r, s, a, l) { u[r] = {}; u[r].uid = '44876b09-3b5d-4676-93e6-72bf0ff10e0e'; u[r].m = ['getReferrerInfo', 'identify', 'integrationsReady', 'on', 'ready', 'track']; u[r].queue = []; u[r].f = function(t) { return function() { var l = Array.prototype.slice.call(arguments); l.unshift(t); u[r].queue.push(l); return u[r].queue; }; }; for (var t = 0; t < u[r].m.length; t++) { l = u[r].m[t]; u[r][l] = u[r].f(l); } a = n.createElement(v); a.src = e + '/us-' + u[r].uid + '.js'; a.async = s; n.getElementsByTagName(i)[0].appendChild(a); })(window, document, 'head', 'script', 'https://cdn.getambassador.com', 'mbsy', true);</script>
+    
+    </head>
+    <body>
+        <script>
+            function setVars(){
+                event.preventDefault()
+                let form = document.getElementById("ambassador-form")
+                let {email, first_name, last_name} = new FormData(form)
+            }
+
+            function formReset(){
+                event.preventDefault();
+                let first_name_input = document.getElementById("first_name");
+                let last_name_input = document.getElementById("email");
+                let email_input = document.getElementById("email");
+                first_name_input.value = "";
+                last_name_input.value = "";
+                email_input.value="";
+            }
+        </script>
+        <form onsubmit={setVars} id="ambassador-form">
+            <label for="first_name">First Name</label>
+            <input  id="first_name" maxlength="40" name="first_name" size="20" type="text" />
+            <br/>
+            <label for="last_name">Last Name</label>
+            <input  id="last_name" maxlength="80" name="last_name" size="20" type="text" />
+            <br/>
+            <label for="email">Email</label>
+            <input  id="email" maxlength="80" name="email" size="20" type="text" />
+            <br/>
+        
+            <input type="submit" name="submit">
+        </form>
+        <div id="header-section" name="header-section">
+            <h1>
+                You Should Be able to Attach A RAF below!
+            </h1>
+        </div>
+        <div id="button-section" name="button-section">
+            <input type="button" value="Reset Form" onclick={formReset}>
+        </div>
+    </body>
+</html>
+ 
+ 
