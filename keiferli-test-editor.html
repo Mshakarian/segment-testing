@@ -5,7 +5,7 @@
     </head>
     <body>
         <script>
-            function setVars(){
+            function setVars(event){
                 event.preventDefault();
                 let form = document.getElementById("ambassador-form");
                 let {email, first_name, last_name} = new FormData(form);
@@ -14,7 +14,7 @@
                 console.log('last name set to: ' + last_name);
             }
 
-            function formReset(){
+            function formReset(event){
                 event.preventDefault();
                 let first_name_input = document.getElementById("first_name");
                 let last_name_input = document.getElementById("email");

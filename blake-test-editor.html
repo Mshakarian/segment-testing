@@ -5,7 +5,7 @@
     </head>
     <body>
         <script>
-            function setVars(){
+            function setVars(event){
                 event.preventDefault();
                 let form = document.getElementById("ambassador-form");
                 let {email, first_name, last_name} = new FormData(form);
@@ -14,7 +14,7 @@
                 console.log('last name set to: ' + last_name);
             }
 
-            function formReset(){
+            function formReset(event){
                 event.preventDefault();
                 let first_name_input = document.getElementById("first_name");
                 let last_name_input = document.getElementById("email");
@@ -31,7 +31,7 @@
         </div>
 
         <div id="form-section" name="form-section">
-            <form onsubmit={setVars} id="ambassador-form">
+            <form onSubmit={setVars} id="ambassador-form">
                 <label for="first_name">First Name</label>
                 <input  id="first_name" maxlength="40" name="first_name" size="20" type="text" />
                 <br/>
