@@ -6,9 +6,12 @@
     <body>
         <script>
             function setVars(){
-                event.preventDefault()
-                let form = document.getElementById("ambassador-form")
-                let {email, first_name, last_name} = new FormData(form)
+                event.preventDefault();
+                let form = document.getElementById("ambassador-form");
+                let {email, first_name, last_name} = new FormData(form);
+                console.log('email set to: ' + email);
+                console.log('first name set to: ' + first_name);
+                console.log('last name set to: ' + last_name);
             }
 
             function formReset(){
