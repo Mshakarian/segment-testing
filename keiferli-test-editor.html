@@ -50,6 +50,7 @@
             function setVars(event){
                 event.preventDefault();
                 let form = document.getElementById("ambassador-form");
+                console.log(form)
                 let formFilled = new FormData(form);
                 console.log(formFilled)
                 console.log('email set to: ' + formFilled.email);
