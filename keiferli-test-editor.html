@@ -44,16 +44,17 @@
             function setVars(event){
                 event.preventDefault();
                 let form = document.getElementById("ambassador-form");
-                let {email, first_name, last_name} = new FormData(form);
-                console.log('email set to: ' + email);
-                console.log('first name set to: ' + first_name);
-                console.log('last name set to: ' + last_name);
+                let formFilled = new FormData(form);
+                console.log(formFilled)
+                console.log('email set to: ' + formFilled.email);
+                console.log('first name set to: ' + formFilled.first_name);
+                console.log('last name set to: ' + formFilled.last_name);
             }
 
             function formReset(event){
                 event.preventDefault();
                 let first_name_input = document.getElementById("first_name");
-                let last_name_input = document.getElementById("email");
+                let last_name_input = document.getElementById("last_name");
                 let email_input = document.getElementById("email");
                 first_name_input.value = "";
                 last_name_input.value = "";
