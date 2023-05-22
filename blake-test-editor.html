@@ -1,38 +1,20 @@
 <html>
     <head>
         <script>(function (u, n, i, v, e, r, s, a, l) { u[r] = {}; u[r].uid = '44876b09-3b5d-4676-93e6-72bf0ff10e0e'; u[r].m = ['getReferrerInfo', 'identify', 'integrationsReady', 'on', 'ready', 'track']; u[r].queue = []; u[r].f = function(t) { return function() { var l = Array.prototype.slice.call(arguments); l.unshift(t); u[r].queue.push(l); return u[r].queue; }; }; for (var t = 0; t < u[r].m.length; t++) { l = u[r].m[t]; u[r][l] = u[r].f(l); } a = n.createElement(v); a.src = e + '/us-' + u[r].uid + '.js'; a.async = s; n.getElementsByTagName(i)[0].appendChild(a); })(window, document, 'head', 'script', 'https://cdn.getambassador.com', 'mbsy', true);</script>
-    
+        <style>
+            form, h1, #raf-attach {
+                margin:auto;
+                width:50%;
+            }
+            #raf-attach {
+                max-width: fit-content;
+            }
+        </style>
     </head>
     <body>
-        <script>
-            function setVars(event){
-                event.preventDefault();
-                let form = document.getElementById("ambassador-form");
-                let {email, first_name, last_name} = new FormData(form);
-                console.log('email set to: ' + email);
-                console.log('first name set to: ' + first_name);
-                console.log('last name set to: ' + last_name);
-            }
-
-            function formReset(event){
-                event.preventDefault();
-                let first_name_input = document.getElementById("first_name");
-                let last_name_input = document.getElementById("email");
-                let email_input = document.getElementById("email");
-                first_name_input.value = "";
-                last_name_input.value = "";
-                email_input.value="";
-            }
-
-            let form = document.getElementById("ambassador-form");
-            form.addEventListener('submit', setVars);
-
-            let resetButton = document.getElementById("reset-button");
-            resetButton.addEventListener('click', formReset);
-        </script>
         <div id="header-section" name="header-section">
             <h1>
-                You Should Be able to Attach A RAF below!
+                Use this Form to create conversions!
             </h1>
         </div>
 
@@ -45,16 +27,31 @@
                 <input  id="last_name" maxlength="80" name="last_name" size="20" type="text" />
                 <br/>
                 <label for="email">Email</label>
-                <input  id="email" maxlength="80" name="email" size="20" type="text" />
+                <input  id="email" maxlength="80" name="email" size="60" type="text" />
                 <br/>
             
                 <input type="submit" name="submit">
+                <input type="reset" value="Reset Form" id="reset-button" />
             </form>
         </div>
-        <div id="button-section" name="button-section">
-            <input type="button" value="Reset Form" id="reset-button">
+        <div id="raf-attach" name="raf-attach">
+            <p>
+                Use this section to attach the Refer A Friend Module!
+            </p>
         </div>
+        <script>
+            function setVars(event){
+                event.preventDefault();
+                let form = document.getElementById("ambassador-form");
+                let formData = new FormData(form);
+                let { email, first_name, last_name } = Object.fromEntries(formData)
+                console.log('email set to: ' + email);
+                console.log('first name set to: ' + first_name);
+                console.log('last name set to: ' + last_name);
+            }
+
+            let form = document.getElementById("ambassador-form");
+            form.addEventListener('submit', setVars);
+        </script>
     </body>
 </html>
- 
- 
