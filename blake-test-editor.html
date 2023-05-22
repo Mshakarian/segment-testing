@@ -23,6 +23,12 @@
                 last_name_input.value = "";
                 email_input.value="";
             }
+
+            let form = document.getElementById("ambassador-form");
+            form.addEventListener('submit', setVars);
+
+            let resetButton = document.getElementById("reset-button");
+            resetButton.addEventListener('click', formReset);
         </script>
         <div id="header-section" name="header-section">
             <h1>
@@ -31,7 +37,7 @@
         </div>
 
         <div id="form-section" name="form-section">
-            <form onSubmit={setVars} id="ambassador-form">
+            <form id="ambassador-form">
                 <label for="first_name">First Name</label>
                 <input  id="first_name" maxlength="40" name="first_name" size="20" type="text" />
                 <br/>
@@ -46,7 +52,7 @@
             </form>
         </div>
         <div id="button-section" name="button-section">
-            <input type="button" value="Reset Form" onclick={formReset}>
+            <input type="button" value="Reset Form" id="reset-button">
         </div>
     </body>
 </html>
