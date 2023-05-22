@@ -2,7 +2,7 @@
     <head>
         <script>(function (u, n, i, v, e, r, s, a, l) { u[r] = {}; u[r].uid = 'a5449e8a-4dd0-4765-99cb-29a0fbf36b07'; u[r].m = ['getReferrerInfo', 'identify', 'integrationsReady', 'on', 'ready', 'track']; u[r].queue = []; u[r].f = function(t) { return function() { var l = Array.prototype.slice.call(arguments); l.unshift(t); u[r].queue.push(l); return u[r].queue; }; }; for (var t = 0; t < u[r].m.length; t++) { l = u[r].m[t]; u[r][l] = u[r].f(l); } a = n.createElement(v); a.src = e + '/us-' + u[r].uid + '.js'; a.async = s; n.getElementsByTagName(i)[0].appendChild(a); })(window, document, 'head', 'script', 'https://cdn.getambassador.com', 'mbsy', true);</script>
         <style>
-            form, #raf-attach {
+            form, h1, #raf-attach {
                 margin:auto;
                 width:50%;
             }
@@ -11,7 +11,7 @@
             }
             #reset-button {
                 margin:auto;
-                max-width: fit-content;
+                width: fit-content;
             }
         </style>
     </head>
@@ -19,7 +19,7 @@
 
         <div id="header-section" name="header-section">
             <h1>
-                You Should Be able to Attach A RAF below!
+                Use this Form to create conversions!
             </h1>
         </div>
 
@@ -42,7 +42,9 @@
             <input type="button" value="Reset Form" id="reset-button">
         </div>
         <div id="raf-attach" name="raf-attach">
-
+            <p>
+                Use this section to attach the Refer A Friend Module!
+            </p>
         </div>
         <script>
             function setVars(event){
