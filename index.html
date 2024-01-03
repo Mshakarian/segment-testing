@@ -75,11 +75,9 @@
         let form = document.querySelector("#formId")
         console.log(form)
         const formData = new FormData(form)
-        console.log(formData)
-        console.log(formData.email)
       const referrerData = JSON.parse(window.localStorage.getItem('mbsy/cookie')).value;
       if (referrerData !== null){
-        mbsy.identify({ email:formData.email })
+        mbsy.identify({ email:formData.get('email') })
         mbsy.track({ revenue:50 })
         }
       }
