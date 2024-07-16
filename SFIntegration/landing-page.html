@@ -121,15 +121,15 @@
     <h1 class="companyName">Shak Stack</h1>
     <nav>
       <a href="#">Home</a>
-      <a href="#">Request a Quote</a>
-      <a href="#">Refer a Friend</a>
+      <a href="#quoteForm">Request a Quote</a>
+      <a href="https://shaktest.zferral.com/SFIntegration/raf-test-editor.html">Refer a Friend</a>
       <a href="#">Contact</a>
     </nav>
   </header>
 
   <h2>Submit a Quote Request!</h2>
   <p>Enter your details below with a description of your request and someone will contact you shortly!</p>
-  <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DDn0000013luC" method="POST">
+  <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DDn0000013luC" method="POST" id="quoteForm" name="quoteForm">
 
     <input type=hidden name="oid" value="00DDn0000013luC">
     <input type=hidden name="retURL" value="https://mshakarian.github.io/segment-testing/SFIntegration/thanks.html">
