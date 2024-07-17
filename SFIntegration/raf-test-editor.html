@@ -10,15 +10,6 @@
             else rafCampaign = 55279
         </script>
         <script>(function (u, n, i, v, e, r, s, a, l) { u[r] = {}; u[r].uid = '2cd07bb8-6003-40e9-8709-8c329227353d'; u[r].m = ['getReferrerInfo', 'identify', 'integrationsReady', 'on', 'ready', 'track']; u[r].queue = []; u[r].f = function(t) { return function() { var l = Array.prototype.slice.call(arguments); l.unshift(t); u[r].queue.push(l); return u[r].queue; }; }; for (var t = 0; t < u[r].m.length; t++) { l = u[r].m[t]; u[r][l] = u[r].f(l); } a = n.createElement(v); a.src = e + '/us-' + u[r].uid + '.js'; a.async = s; n.getElementsByTagName(i)[0].appendChild(a); })(window, document, 'head', 'script', 'https://shak-snippet.zferral.com', 'mbsy', true);</script>
-        <script>
-            mbsy.on('promptEnroll', function(event, properties) {
-            const referrerData = JSON.parse(window.localStorage.getItem('mbsy/cookie')).value;
-            if (referrerData !== null){
-              mbsy.identify({email:properties.email})
-              mbsy.track({campaign:referrerData.mbsy_cookie_campaign})
-              }
-            })
-          </script>
       
         <style>
             #header-section, {
@@ -52,6 +43,18 @@
             </button>
         </div>
     </body>
+    <footer>
+        <script>
+            mbsy.on('promptEnroll', function(event, properties) {
+            const referrerData = JSON.parse(window.localStorage.getItem('mbsy/cookie')).value;
+            if (referrerData !== null){
+              mbsy.identify({email:properties.email})
+              mbsy.track({campaign:referrerData.mbsy_cookie_campaign})
+              }
+              else console.log('no-referral-made')
+            })
+          </script>
+    </footer>
 </html>
  
  
