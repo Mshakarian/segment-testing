@@ -35,13 +35,15 @@
         </div>
         <script>
             const urlParams = new URLSearchParams(window.location.search);
-            let rafCampaign
             if (urlParams.get('referredCampaign')){
                 const referredCampaign = urlParams.get('referredCampaign');
-                rafCampaign = referredCampaign
+                const rafCampaign = referredCampaign
+                const rafSegment = 6
             }
-            else rafCampaign = 55279;
-
+            else {
+                const rafCampaign = 55279;
+                const rafSegment = 4
+            }
             const rafLaunch = true;
         </script>
     </body>
