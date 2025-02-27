@@ -1,62 +1,215 @@
 <html>
-    <head>
-        <script>(function (u, n, i, v, e, r, s, a, l) { u[r] = {}; u[r].uid = '2cd07bb8-6003-40e9-8709-8c329227353d'; u[r].m = ['getReferrerInfo', 'identify', 'integrationsReady', 'on', 'ready', 'track']; u[r].queue = []; u[r].f = function(t) { return function() { var l = Array.prototype.slice.call(arguments); l.unshift(t); u[r].queue.push(l); return u[r].queue; }; }; for (var t = 0; t < u[r].m.length; t++) { l = u[r].m[t]; u[r][l] = u[r].f(l); } a = n.createElement(v); a.src = e + '/us-' + u[r].uid + '.js'; a.async = s; n.getElementsByTagName(i)[0].appendChild(a); })(window, document, 'head', 'script', 'https://shak-snippet.zferral.com', 'mbsy', true);       
-        </script>
-        <script>
-            const urlParams = new URLSearchParams(window.location.search);
-            if (urlParams.has('referredCampaign')){
-                window.rafCampaign = urlParams.get('referredCampaign');
-                window.rafSegment = 6
-            }
-            else {
-                window.rafCampaign = 55279;
-                window.rafSegment = 4
-            }     
-        </script>
-        <style>
-            #header-section, {
-                margin:auto;
-                max-width: 100vw;
-                max-height: auto;
-            }
-            img {
-                max-width: 100%;
-                max-height: auto;
-            }
-            #raf-attach {
-                max-width: 500px;
-                margin:auto;
-                width:50%;
-            }
-        </style>
-    </head>
-    <body>
-        <div id="header-section" name="header-section">
-            <h1>
-                Use this Page to create RAF Widgets!
-            </h1>
-        </div>
-        <div id="raf-attach" name="raf-attach">
-            <p>
-                Use this section to attach the embedded Refer A Friend Module! It has special width properties! Or you can use the button below to launch on "Click"!
-            </p>
-            <button name="button">
-                Refer Your Friends!
-            </button>
-        </div>
-    </body>
-    <footer>
-        <script>
-            mbsy.on('promptEnroll', function(event, properties) {
-            const referrerData = JSON.parse(window.localStorage.getItem('mbsy/cookie')).value;
-            if (referrerData !== null){
-              mbsy.identify({email:properties.email})
-              mbsy.track({campaign:referrerData.mbsy_cookie_campaign})
-              }
-              else console.log('no-referral-made')
-            })
-          </script>
-    </footer>
+  <head>
+    <script>
+      (function (u, n, i, v, e, r, s, a, l) {
+        u[r] = {};
+        u[r].uid = "2cd07bb8-6003-40e9-8709-8c329227353d";
+        u[r].m = [
+          "getReferrerInfo",
+          "identify",
+          "integrationsReady",
+          "on",
+          "ready",
+          "track",
+        ];
+        u[r].queue = [];
+        u[r].f = function (t) {
+          return function () {
+            var l = Array.prototype.slice.call(arguments);
+            l.unshift(t);
+            u[r].queue.push(l);
+            return u[r].queue;
+          };
+        };
+        for (var t = 0; t < u[r].m.length; t++) {
+          l = u[r].m[t];
+          u[r][l] = u[r].f(l);
+        }
+        a = n.createElement(v);
+        a.src = e + "/us-" + u[r].uid + ".js";
+        a.async = s;
+        n.getElementsByTagName(i)[0].appendChild(a);
+      })(
+        window,
+        document,
+        "head",
+        "script",
+        "https://shak-snippet.zferral.com",
+        "mbsy",
+        true
+      );
+    </script>
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.has("referredCampaign")) {
+        window.rafCampaign = urlParams.get("referredCampaign");
+        window.rafSegment = 6;
+      } else {
+        window.rafCampaign = 55279;
+        window.rafSegment = 4;
+      }
+    </script>
+    <style>
+      #header-section {
+        margin: auto;
+        max-width: 100vw;
+        max-height: auto;
+      }
+      img {
+        max-width: 100%;
+        max-height: auto;
+      }
+      #raf-attach {
+        max-width: 500px;
+        margin: auto;
+        width: 50%;
+      }
+      header {
+        background-color: #444; /* Lighter shade of gray */
+        color: #fff; /* Light text color for contrast */
+        padding: 10px 20px;
+        display: flex; /* Allow for inline elements */
+        justify-content: space-between; /* Space elements horizontally */
+        position: fixed; /* Fix the header to the top of the page */
+        top: 0;
+        left: 0;
+        width: 100%; /* Make the header span the entire width */
+        z-index: 100; /* Ensure the header stays above the content */
+      }
+      nav {
+        display: flex; /* Allow inline elements for spacing */
+        max-width: 80%; /* Set a maximum width for the nav */
+        justify-content: space-between; /* Space elements horizontally within the max-width */
+      }
+
+      h1.companyName {
+        margin: 0;
+        color: blueviolet; /* Remove default margin for h1 inside header */
+      }
+
+      nav a {
+        color: inherit; /* Inherit text color from header */
+        text-decoration: none; /* Remove underline from links */
+        padding: 5px 10px;
+      }
+
+      nav a:hover {
+        background-color: #222; /* Change background color on hover */
+      }
+
+      /* Rest of the body styles */
+      body {
+        font-family: "Open Sans", sans-serif;
+        margin: 0;
+        padding: 20px;
+        min-height: 100vh; /* Set minimum height for full viewport */
+        background-color: #f5f5f5;
+      }
+
+      h2 {
+        font-size: 2em;
+        margin-bottom: 10px;
+        color: #212529;
+        padding-top: 20px;
+      }
+
+      p {
+        font-size: 1.2em;
+        line-height: 1.5;
+        color: #666;
+        margin-bottom: 20px;
+      }
+
+      a {
+        color: #333;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      a:hover {
+        color: #007bff;
+      }
+      /* Styles for the form */
+      form {
+        width: 50%; /* Adjust form width */
+        margin: 0 auto; /* Center the form horizontally */
+        padding: 20px; /* Add padding for better spacing within the form */
+        border: 1px solid #ddd; /* Add a subtle border */
+        border-radius: 5px; /* Add rounded corners */
+      }
+
+      label {
+        display: block; /* Make labels appear on separate lines */
+        margin-bottom: 5px; /* Add space between labels and inputs */
+      }
+
+      input[type="text"],
+      input[type="email"],
+      textarea {
+        width: 100%; /* Make input fields full width */
+        padding: 8px; /* Add padding for better readability */
+        border: 1px solid #ccc; /* Add a light border */
+        border-radius: 3px; /* Add rounded corners */
+      }
+
+      textarea {
+        height: 100px; /* Set a minimum height for the textarea */
+      }
+
+      input[type="submit"] {
+        background-color: #4caf50; /* Green color for submit button */
+        color: white; /* White text color */
+        padding: 10px 20px; /* Add padding for the button */
+        border: none; /* Remove default border */
+        border-radius: 5px; /* Add rounded corners */
+        cursor: pointer; /* Change cursor to indicate clickability */
+      }
+
+      input[type="submit"]:hover {
+        background-color: #45a049; /* Darker green on hover */
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1 class="companyName">Shak Stack</h1>
+      <nav>
+        <a href="https://shaktest.zferral.com/SFIntegration/landing-page.html"
+          >Home</a
+        >
+        <a href="https://shaktest.zferral.com/SFIntegration/landing-page.html"
+          >Request a Quote</a
+        >
+        <a
+          href="https://shaktest.zferral.com/SFIntegration/raf-test-editor.html"
+          >Refer a Friend</a
+        >
+        <a href="#">Contact</a>
+      </nav>
+    </header>
+    <div id="header-section" name="header-section">
+      <h1>Use this Page to create RAF Widgets!</h1>
+    </div>
+    <div id="raf-attach" name="raf-attach">
+      <p>
+        Use this section to attach the embedded Refer A Friend Module! It has
+        special width properties! Or you can use the button below to launch on
+        "Click"!
+      </p>
+      <button name="button">Refer Your Friends!</button>
+    </div>
+  </body>
+  <footer>
+    <script>
+      mbsy.on("promptEnroll", function (event, properties) {
+        const referrerData = JSON.parse(
+          window.localStorage.getItem("mbsy/cookie")
+        ).value;
+        if (referrerData !== null) {
+          mbsy.identify({ email: properties.email });
+          mbsy.track({ campaign: referrerData.mbsy_cookie_campaign });
+        } else console.log("no-referral-made");
+      });
+    </script>
+  </footer>
 </html>
- 
- 
