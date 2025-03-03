@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+    <title>Submit a Quote Request</title>
+    <style>
+      /* Styles for the header */
+      header {
+        background-color: #444; /* Lighter shade of gray */
+        color: #fff; /* Light text color for contrast */
+        padding: 10px 20px;
+        display: flex; /* Allow for inline elements */
+        justify-content: space-between; /* Space elements horizontally */
+        position: fixed; /* Fix the header to the top of the page */
+        top: 0;
+        left: 0;
+        width: 100%; /* Make the header span the entire width */
+        z-index: 100; /* Ensure the header stays above the content */
+      }
+      nav {
+        display: flex; /* Allow inline elements for spacing */
+        max-width: 80%; /* Set a maximum width for the nav */
+        justify-content: space-between; /* Space elements horizontally within the max-width */
+      }
+
+      h1.companyName {
+        margin: 0;
+        color: blueviolet; /* Remove default margin for h1 inside header */
+      }
+
+      nav a {
+        color: inherit; /* Inherit text color from header */
+        text-decoration: none; /* Remove underline from links */
+        padding: 5px 10px;
+      }
+
+      nav a:hover {
+        background-color: #222; /* Change background color on hover */
+      }
+
+      /* Rest of the body styles */
+      body {
+        font-family: "Open Sans", sans-serif;
+        margin: 0;
+        padding: 20px;
+        min-height: 100vh; /* Set minimum height for full viewport */
+        background-color: #f5f5f5;
+      }
+
+      h2 {
+        font-size: 2em;
+        margin-bottom: 10px;
+        color: #212529;
+        padding-top: 20px;
+      }
+
+      p {
+        font-size: 1.2em;
+        line-height: 1.5;
+        color: #666;
+        margin-bottom: 20px;
+      }
+
+      a {
+        color: #333;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      a:hover {
+        color: #007bff;
+      }
+      /* Styles for the form */
+      form {
+        width: 50%; /* Adjust form width */
+        margin: 0 auto; /* Center the form horizontally */
+        padding: 20px; /* Add padding for better spacing within the form */
+        border: 1px solid #ddd; /* Add a subtle border */
+        border-radius: 5px; /* Add rounded corners */
+      }
+
+      label {
+        display: block; /* Make labels appear on separate lines */
+        margin-bottom: 5px; /* Add space between labels and inputs */
+      }
+
+      input[type="text"],
+      input[type="email"],
+      textarea {
+        width: 100%; /* Make input fields full width */
+        padding: 8px; /* Add padding for better readability */
+        border: 1px solid #ccc; /* Add a light border */
+        border-radius: 3px; /* Add rounded corners */
+      }
+
+      textarea {
+        height: 100px; /* Set a minimum height for the textarea */
+      }
+
+      input[type="submit"] {
+        background-color: #4caf50; /* Green color for submit button */
+        color: white; /* White text color */
+        padding: 10px 20px; /* Add padding for the button */
+        border: none; /* Remove default border */
+        border-radius: 5px; /* Add rounded corners */
+        cursor: pointer; /* Change cursor to indicate clickability */
+      }
+
+      input[type="submit"]:hover {
+        background-color: #45a049; /* Darker green on hover */
+      }
+    </style>
+    <script>
+      (function (u, n, i, v, e, r, s, a, l) {
+        u[r] = {};
+        u[r].uid = "2cd07bb8-6003-40e9-8709-8c329227353d";
+        u[r].m = [
+          "getReferrerInfo",
+          "identify",
+          "integrationsReady",
+          "on",
+          "ready",
+          "track",
+        ];
+        u[r].queue = [];
+        u[r].f = function (t) {
+          return function () {
+            var l = Array.prototype.slice.call(arguments);
+            l.unshift(t);
+            u[r].queue.push(l);
+            return u[r].queue;
+          };
+        };
+        for (var t = 0; t < u[r].m.length; t++) {
+          l = u[r].m[t];
+          u[r][l] = u[r].f(l);
+        }
+        a = n.createElement(v);
+        a.src = e + "/us-" + u[r].uid + ".js";
+        a.async = s;
+        n.getElementsByTagName(i)[0].appendChild(a);
+      })(
+        window,
+        document,
+        "head",
+        "script",
+        "https://shak-snippet.zferral.com",
+        "mbsy",
+        true
+      );
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <h1 class="companyName">Shak Stack</h1>
+      <nav>
+        <a href="https://shaktest.zferral.com/SFIntegration/landing-page.html"
+          >Home</a
+        >
+        <a
+          href="https://shaktest.zferral.com/SFIntegration/landing-page.html#quoteForm"
+          >Request a Quote</a
+        >
+        <a
+          href="https://shaktest.zferral.com/SFIntegration/raf-test-editor.html"
+          >Refer a Friend</a
+        >
+        <a href="https://shaktest.zferral.com/SFIntegration/contact-form.html"
+          >Contact</a
+        >
+      </nav>
+    </header>
+
+    <h2>Get in Touch!</h2>
+    <p>
+      Enter your details below with a description of your request and someone
+      will contact you shortly!
+    </p>
+
+    <form
+      name="theForm"
+      id="theForm"
+      method="POST"
+      action="https://mbsy.getambassador.dev/embed/v2/form"
+    >
+      <div>
+        <input
+          type="label"
+          name="mbsy_username"
+          value="shakstack"
+          style="display: none"
+        />
+        <input
+          type="label"
+          name="mbsy_campaign_uid"
+          value="33194"
+          style="display: none"
+        />
+        <input type="label" name="revenue" value="0" style="display: none" />
+        <input
+          type="label"
+          name="mbsy_email_new_ambassador"
+          value="1"
+          style="display: none"
+        />
+        <input
+          type="label"
+          id="mbsy_forward_url"
+          name="mbsy_forward_url"
+          style="display: none"
+        />
+        <input
+          type="label"
+          name="mbsy_api_method"
+          value="ambassador/get"
+          style="display: none"
+        />
+        <input
+          type="label"
+          name="mbsy_add_to_group_id"
+          value="6"
+          style="display: none"
+        />
+      </div>
+      <!---->
+      <div class="form-section-one">
+        <!---->
+        <div>
+          <label for="first_name" class="alliance-field-label field-style">
+            First Name
+          </label>
+          <input
+            type="text"
+            required=""
+            id="first_name"
+            name="first_name"
+            class="form-control form-control-sm field-style input-box ng-untouched ng-pristine ng-invalid"
+          />
+        </div>
+        <!---->
+        <div>
+          <label for="last_name" class="alliance-field-label field-style">
+            Last Name
+          </label>
+          <input
+            type="text"
+            required=""
+            id="last_name"
+            name="last_name"
+            class="form-control form-control-sm field-style input-box ng-untouched ng-pristine ng-invalid"
+          />
+        </div>
+        <!----><!---->
+        <div>
+          <label for="phone" class="alliance-field-label field-style">
+            Phone Number
+          </label>
+          <input
+            type="text"
+            maxlength="12"
+            required=""
+            id="phone"
+            name="phone"
+            class="form-control form-control-sm field-style input-box ng-untouched ng-pristine ng-invalid"
+          />
+        </div>
+        <div class="form-group alliance-form-group">
+          <label for="email" class="alliance-field-label field-style">
+            Email Address
+          </label>
+          <input
+            type="text"
+            required=""
+            id="email"
+            name="email"
+            class="form-control form-control-sm field-style input-box ng-untouched ng-pristine ng-invalid"
+          />
+        </div>
+        <div class="form-group alliance-form-group">
+          <label for="company" class="alliance-field-label field-style">
+            Company Name
+          </label>
+          <input
+            type="text"
+            required=""
+            id="company"
+            name="company"
+            class="form-control form-control-sm field-style input-box ng-untouched ng-pristine ng-invalid"
+          />
+        </div>
+        <!----><!---->
+        <button
+          onclick="return ReferralSubmit()"
+          type="submit"
+          class="white-button alliance-page-submit"
+          style="margin-top: 10px; padding-bottom: 10px"
+        >
+          Submit
+        </button>
+        <!---->
+      </div>
+      <!---->
+    </form>
+
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const shortCode = urlParams.get("mbsy");
+      if (shortCode != null) {
+        referringShortCode = document.getElementById("00NDn00000icHXz");
+        referringShortCode.value = shortCode;
+        console.log("referring short code=" + shortCode);
+      }
+    </script>
+  </body>
+</html>
