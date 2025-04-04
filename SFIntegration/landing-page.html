@@ -164,8 +164,7 @@
       };
   
       if (params.has('utm_medium') && params.has('utm_campaign') && params.has('utm_source') && params.has('utm_content')) {
-          console.log("referral parameters set");
-          return;
+          console.log("referral parameters already set");
       }
       else {
           if (short_code && short_code.includes('+')) short_code.replace('+', ' ');
