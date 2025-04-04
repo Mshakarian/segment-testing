@@ -151,6 +151,39 @@
         true
       );
     </script>
+    <script defer type="text/javascript" id="ambassador-cookie-data">
+      const data = JSON.parse(localStorage.getItem('mbsy/cookie'));
+      const params = new URLSearchParams(window.location.search);
+  
+      let short_code = null;
+      let campaign_id = null;
+  
+      if (data) {
+          short_code = data['value']['mbsy_cookie_code'];
+          campaign_id = data['value']['mbsy_cookie_campaign'];
+      };
+  
+      if (params.has('utm_medium') && params.has(utm_campaign) && params.has(utm_source)) {
+          console.log("referral parameters set");
+          return;
+      }
+      else {
+          if (short_code && short_code.includes('+')) short_code.replace('+', ' ');
+          if (short_code && short_code.includes('%')) short_code.replace('%', ' ');
+          console.log(campaign_id, short_code, '<--- the variables');
+  
+          if (campaign_id && short_code) {
+              if (!params.has('utm_campaign')) params.set('utm_campaign', campaign_id);
+              if (campaign_id === '76883' && !params.has('utm_source')) params.set('utm_source', 'c21ambassador');
+              if (campaign_id === '76388' && !params.has('utm_source')) params.set('utm_source', 'ambassador');
+              if (!params.has('utm_source')) params.set('utm_source', 'ambassador2')
+              if (!params.has('utm_id')) params.set('utm_id', short_code);
+              if (!params.has('utm_medium')) params.set('utm_medium', 'referral');
+      
+              window.location.search = params.toString();
+          };
+      };
+  </script>
   </head>
 
   <body>
